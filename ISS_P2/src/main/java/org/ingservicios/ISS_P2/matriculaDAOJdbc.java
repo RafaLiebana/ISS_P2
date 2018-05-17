@@ -32,7 +32,7 @@ public class matriculaDAOJdbc implements matriculaDAOInterface {
 	
 	public void addMatricula(matriculaDTO matricula) {			
 		String sql = "insert into matriculas(ParkingID,Matricula) values(?,?)";
-		Object[ ] parametros = {matricula.getParkingID(), matricula.getMatricula()}; //Array de objetos
+		Object[ ] parametros = {matricula.getParkingId(), matricula.getMatricula()}; //Array de objetos
 		//Para operaciones INSERT, UPDATE o DELETE se usa el método jdbcTemplate.update
 		this.jdbcTemplate.update(sql,parametros);
 		}
@@ -79,7 +79,7 @@ public class matriculaDAOJdbc implements matriculaDAOInterface {
 			//Obtenemos fecha actual para actualizarla
 			Calendar calendar = Calendar.getInstance();
 			Timestamp currentTimestamp = new java.sql.Timestamp(calendar.getTime().getTime());
-			Object[] parametros = {matricula.getParkingID(),matricula.getMatricula(),currentTimestamp,registro}; 
+			Object[] parametros = {matricula.getParkingId(),matricula.getMatricula(),currentTimestamp,registro}; 
 			//Para operaciones INSERT, UPDATE o DELETE se usa el método jdbcTemplate.update
 			this.jdbcTemplate.update(sql,parametros);
 		}

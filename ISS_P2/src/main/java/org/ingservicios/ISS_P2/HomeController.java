@@ -39,19 +39,19 @@ public class HomeController {
 	@RequestMapping(value="/registroMatricula/enviar", method = RequestMethod.POST)
 	public ResponseEntity<matriculaDTO> crearVehiculo(@RequestBody matriculaDTO vehiculo){
 		boolean resul=false;
-		if(dao.buscaMatricula(vehiculo.getMatricula())==null && vehiculo.getParkingID()==0) {
+		if(dao.buscaMatricula(vehiculo.getMatricula())==null && vehiculo.getParkingId()==0) {
 		dao.addMatricula(vehiculo);
 		
-		}else if(dao.buscaMatricula(vehiculo.getMatricula())!=null && dao.buscaParkingIDVehiculoMatricula(vehiculo.getParkingID(),vehiculo.getMatricula())==null
-				&& vehiculo.getParkingID()==1) {
+		}else if(dao.buscaMatricula(vehiculo.getMatricula())!=null && dao.buscaParkingIDVehiculoMatricula(vehiculo.getParkingId(),vehiculo.getMatricula())==null
+				&& vehiculo.getParkingId()==1) {
 			dao.addMatricula(vehiculo);
 			
-		}else if(dao.buscaMatricula(vehiculo.getMatricula())!=null && dao.buscaParkingIDVehiculoMatricula(vehiculo.getParkingID(), vehiculo.getMatricula())!=null 
-				&& vehiculo.getParkingID()==0) {
-			int registro=dao.buscaRegistroVehiculo(vehiculo.getMatricula(), vehiculo.getParkingID()).getRegistro();
+		}else if(dao.buscaMatricula(vehiculo.getMatricula())!=null && dao.buscaParkingIDVehiculoMatricula(vehiculo.getParkingId(), vehiculo.getMatricula())!=null 
+				&& vehiculo.getParkingId()==0) {
+			int registro=dao.buscaRegistroVehiculo(vehiculo.getMatricula(), vehiculo.getParkingId()).getRegistro();
 			dao.actualizaCoche(vehiculo, registro);
 		}else{
-			int registro=dao.buscaRegistroVehiculo(vehiculo.getMatricula(), vehiculo.getParkingID()).getRegistro();
+			int registro=dao.buscaRegistroVehiculo(vehiculo.getMatricula(), vehiculo.getParkingId()).getRegistro();
 			dao.actualizaCoche(vehiculo, registro);
 		}
 		
@@ -91,8 +91,8 @@ public class HomeController {
 	 		*/
 	 		
 	 		//obtenemos el tiempo de entrada y salida 
-	 		Timestamp tentrada = dao.tentrada(matricula, dao.buscaParkingIDVehiculo(0).getParkingID());
-	 		Timestamp tsalida = dao.tsalida(matricula, dao.buscaParkingIDVehiculo(1).getParkingID());
+	 		Timestamp tentrada = dao.tentrada(matricula, dao.buscaParkingIDVehiculo(0).getParkingId());
+	 		Timestamp tsalida = dao.tsalida(matricula, dao.buscaParkingIDVehiculo(1).getParkingId());
 	 			
 	 		double tiempo = (((tsalida.getTime()-tentrada.getTime())/1000)/60);
 	 		System.out.println("Minutos de estancia: "+ tiempo);

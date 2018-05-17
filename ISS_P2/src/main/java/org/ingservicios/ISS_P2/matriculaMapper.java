@@ -10,7 +10,7 @@ public matriculaDTO mapRow(ResultSet rs,int rowNum) throws SQLException{
 		matriculaDTO matricula=new matriculaDTO();
 		matricula.setMatricula(rs.getString("Matricula"));
 		matricula.setRegistro(rs.getInt("Registro"));
-		matricula.setParkingID(rs.getInt("ParkingID"));
+		matricula.setParkingId(rs.getInt("ParkingId"));
 		matricula.setTimeStamp(rs.getTimestamp("TimeStamp"));
 		
 		return matricula;

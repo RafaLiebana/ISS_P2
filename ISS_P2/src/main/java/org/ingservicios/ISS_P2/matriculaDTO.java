@@ -2,49 +2,49 @@ package org.ingservicios.ISS_P2;
 import java.sql.Timestamp;
 
 public class matriculaDTO {
-	private int Registro;
-	private int ParkingID;
-	private String Matricula;
+	private int registro;
+	private int parkingId;
+	private String matricula;
 	private Timestamp TimeStamp;
 
 
 public matriculaDTO(){	
-	this.Registro=0;
-	this.ParkingID=0;
-	this.Matricula="";
+	this.registro=0;
+	this.parkingId=0;
+	this.matricula="";
 	this.TimeStamp=null;
 	}
 
 public matriculaDTO(int Registro, int ParkingID, String Matricula, Timestamp TimeStamp) {
-	this.Registro=Registro;
-	this.ParkingID=ParkingID;
-	this.Matricula=Matricula;
+	this.registro=Registro;
+	this.parkingId=ParkingID;
+	this.matricula=Matricula;
 	this.TimeStamp=TimeStamp;
 	
 }
 
 public int getRegistro() {
-	return Registro;
+	return registro;
 }
 
 public void setRegistro(int registro) {
-	Registro = registro;
+	this.registro = registro;
 }
 
-public int getParkingID() {
-	return ParkingID;
+public int getParkingId() {
+	return parkingId;
 }
 
-public void setParkingID(int parkingID) {
-	ParkingID = parkingID;
+public void setParkingId(int parkingId) {
+	this.parkingId = parkingId;
 }
 
 public String getMatricula() {
-	return Matricula;
+	return matricula;
 }
 
 public void setMatricula(String matricula) {
-	Matricula = matricula;
+	this.matricula = matricula;
 }
 
 public Timestamp getTimeStamp() {
