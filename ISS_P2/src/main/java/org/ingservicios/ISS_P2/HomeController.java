@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
 	//Al marcarlo con @Autowired, se inyectará, como una instancia de dao, 
-		//un bean de una clase que implemente el interfaz DAOVehiculosInterfaz
+		//un bean de una clase que implemente el interfaz DAOVehiculosInterfaz QUE PACAHAO
 		@Autowired
 		private matriculaDAOInterface dao;
 		
