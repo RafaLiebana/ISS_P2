@@ -1,7 +1,7 @@
 package org.ingservicios.ISS_P2;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import org.springframework.jdbc.core.RowMapper;
 
 public class matriculaMapper implements RowMapper<matriculaDTO> {

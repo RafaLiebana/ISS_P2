@@ -14,7 +14,7 @@
 </form>
 <script type="text/javascript">
 	$('#enviar').submit(function(evento){
-		var urlrest = 'registroMatricula/enviar';
+		var urlrest = 'registroMatricula';
 		$.ajax({
 			url: urlrest,
 			type: 'POST',
